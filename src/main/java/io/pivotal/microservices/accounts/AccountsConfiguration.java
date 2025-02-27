@@ -2,6 +2,7 @@ package io.pivotal.microservices.accounts;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.security.SecureRandom;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -57,7 +58,7 @@ public class AccountsConfiguration {
 		logger.info("System has " + accounts.size() + " accounts");
 
 		// Populate with random balances
-		Random rand = new Random();
+		Random rand = new SecureRandom();
 
 		for (Map<String, Object> item : accounts) {
 			String number = (String) item.get("number");
